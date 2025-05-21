@@ -1,0 +1,11 @@
+[project]
+name = "ge-test"
+version = "0.1.0"
+description = "GE Test"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[standard]>=0.115.12",
+    "pydantic>=2.11.4",
+    "pydantic-settings>=2.9.1",
+]
