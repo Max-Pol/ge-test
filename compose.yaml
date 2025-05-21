@@ -4,6 +4,14 @@ services:
     ports:
       - "8000:8000"
     command: fastapi run --reload app/main.py
+    volumes:
+      # Let's use a bind mount to persist the database
+      - type: bind
+        source: db.sqlite3
+        target: /app/db.sqlite3
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - JWT_SECRET_KEY=changethis
     develop:
       watch:  
         # Sync the working directory with the `/app` directory in the container
